@@ -1,0 +1,9 @@
+.PrimaryBtn {
+  padding: 0.5em;
+  width: 100%;
+  border: 0;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.2em;
+  margin: 1em 0;
+}
