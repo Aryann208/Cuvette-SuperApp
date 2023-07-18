@@ -1,0 +1,57 @@
+.SelectCategoryPage {
+  background-color: #000000;
+  min-height: 100vh;
+  width: 100%;
+  color: #ffffff;
+  display: flex;
+}
+.LeftSection {
+  flex: 1;
+  padding: 5%;
+}
+.LeftSection h2 {
+  color: #72db73;
+  font-size: 2em;
+}
+.LeftSection h4 {
+  margin: 2em 0;
+  font-size: 2.5em;
+  width: 50%;
+}
+.RightSection {
+  flex: 1;
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 0 3%;
+}
+.CategoryHolderContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  min-height: 80%;
+
+  overflow: hidden;
+}
+.SelectedCategories {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5em;
+}
+.SelectedTabs {
+  padding: 0.5em;
+
+  flex-shrink: 0;
+  border-radius: 31px;
+  background: #148a08;
+  display: flex;
+  justify-content: space-around;
+}
+.SelectedTabs span {
+  color: #085c00;
+}
+.Warning {
+  color: #f00;
+  margin: 1em 0;
+}

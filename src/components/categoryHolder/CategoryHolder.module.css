@@ -1,0 +1,20 @@
+.CategoryHolderContainer {
+  height: 24vh;
+  width: 14vw;
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  margin: 0.5em;
+}
+.CategoryHolderContainer img {
+  border-radius: 10px;
+  height: 14vh;
+}
+.SelectedCategory {
+  border: 5px #11b800 solid;
+}
