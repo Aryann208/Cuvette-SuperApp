@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import classes from './SelectCategory.module.css';
 import CategoryHolder from '../../components/categoryHolder/CategoryHolder';
 import Image1 from '../../assets/image 2.png';
@@ -25,6 +26,7 @@ const categories = [
 ];
 
 const SelectCategory = () => {
+  const navigate = useNavigate();
   const [selectedIds, setSelectedIds] = useState([]);
 
   const onClickHandler = (id) => {
@@ -38,12 +40,20 @@ const SelectCategory = () => {
   const unselectCategory = (id) => {
     setSelectedIds(selectedIds.filter((selectedId) => selectedId !== id));
   };
-  const onButtonSubmit = () => {
+  const onSubmitHandler = () => {
     if (selectedIds.length >= 3) {
       const categoryNames = selectedIds.map((id) => categories[id].name);
-      localStorage.setItem('category', categoryNames);
+      localStorage.setItem('categoryIDs', JSON.stringify(selectedIds));
+      localStorage.setItem('category', JSON.stringify(categoryNames));
+      navigate('/home');
     }
   };
+  useEffect(() => {
+    const storedIDs = localStorage?.getItem('categoryIDs');
+    if (storedIDs) {
+      setSelectedIds(JSON.parse(storedIDs));
+    }
+  }, []);
 
   return (
     <div className={classes.SelectCategoryPage}>
@@ -83,7 +93,7 @@ const SelectCategory = () => {
           btnText="Next Page"
           textColor="#fff"
           width="8em"
-          onClick={onButtonSubmit}
+          onClick={onSubmitHandler}
         />
       </div>
     </div>

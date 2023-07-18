@@ -3,8 +3,10 @@ import BannerImg from '../../assets/RegistrationBanner.png';
 import classes from './RegistrationPage.module.css';
 import Input from '../../components/input/Input';
 import Button from '../../components/button/Button';
+import { useNavigate } from 'react-router-dom';
 const RegistrationPage = () => {
-  const [authenticate, setAuthenticate] = useState(false);
+  const navigate = useNavigate();
+
   const [name, setName] = useState('');
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
@@ -83,13 +85,16 @@ const RegistrationPage = () => {
       mobileError.length === 0 &&
       checkboxError.length === 0
     ) {
-      setAuthenticate(true);
-    }
-    if (authenticate) {
-      localStorage.setItem('name', name);
-      localStorage.setItem('username', username);
-      localStorage.setItem('email', email);
-      localStorage.setItem('mobile', mobile);
+      const userData = {
+        name,
+        username,
+        email,
+        mobile,
+      };
+
+      localStorage.setItem('userData', JSON.stringify(userData));
+
+      navigate('/select-category');
     }
   };
   return (
