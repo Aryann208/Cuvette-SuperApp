@@ -1,0 +1,13 @@
+.Notes {
+  min-height: 100%;
+
+  border-radius: 19px;
+  background: #f1c75b;
+  padding: 1em;
+  color: #000;
+}
+.Notes input {
+  border: none;
+  background-color: transparent;
+  outline: none;
+}

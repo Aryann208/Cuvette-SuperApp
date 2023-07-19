@@ -1,0 +1,34 @@
+.newsContainer {
+  position: relative;
+  min-height: 100%;
+  width: 80%;
+  border-radius: 20px;
+
+  /* border: pink 2px solid; */
+  overflow: hidden;
+}
+.newsContainer img {
+  height: 35%;
+
+  object-fit: contain;
+}
+.newsContainer .newsMetadata {
+  height: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 2em 1em;
+  width: 100%;
+}
+.newsMetadata h4 {
+  width: 80%;
+  margin-bottom: 0.5em;
+}
+.newsContainer p {
+  height: 40%;
+  width: 100%;
+  padding: 2em 1em;
+  background-color: #fff;
+  color: #000;
+  overflow: auto;
+}
