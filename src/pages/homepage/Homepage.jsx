@@ -19,9 +19,7 @@ const Homepage = () => {
             <Notes />
           </div>
         </div>
-        <div className={classes.lowerSection}>
-          <TimerApp />
-        </div>
+        <div className={classes.lowerSection}></div>
       </div>
       <div className={classes.rightSection}>
         <NewsApp />
