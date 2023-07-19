@@ -1,11 +1,10 @@
 .dashboard {
   overflow: hidden;
   position: relative;
-
+  padding: 1em;
   max-height: 58%;
   display: flex;
 
-  padding: 2%;
   background: #5746ea;
   border-radius: 20px;
 }

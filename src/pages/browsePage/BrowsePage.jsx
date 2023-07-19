@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router';
 import classes from './BrowsePage.module.css';
 import Avatar from '../../assets/AvatarLogo.png';
 const BrowsePage = () => {
+  const navigate = useNavigate();
   const [userCategories, setUserCategories] = useState(null);
   const [apiData, setApiData] = useState(null);
   const MOVIESAPIKEY = process.env.REACT_APP_MOVIESAPIKEY;
@@ -58,7 +60,9 @@ const BrowsePage = () => {
   return (
     <div className={classes.BrowsePage}>
       <div className={classes.BrowseNavigation}>
-        <h2>Superapp</h2>
+        <h2 onClick={() => navigate('/home')} className="Logo">
+          Superapp
+        </h2>
         <img src={Avatar} alt="" />
       </div>
       <h2>Entertainment according to your choice</h2>

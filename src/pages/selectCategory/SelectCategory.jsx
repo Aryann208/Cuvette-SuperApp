@@ -58,7 +58,7 @@ const SelectCategory = () => {
   return (
     <div className={classes.SelectCategoryPage}>
       <div className={classes.LeftSection}>
-        <h2>Super app</h2>
+        <h2 className="Logo">Super app</h2>
         <h4>Choose your entertainment category</h4>
         <div className={classes.SelectedCategories}>
           {selectedIds?.map((selectedId) => (

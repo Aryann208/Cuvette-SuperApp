@@ -37,7 +37,6 @@ const RegistrationPage = () => {
   };
   const toggleCheckbox = (e) => {
     setCheckbox(!checkbox);
-    // validateCheckbox();
   };
   const validateName = () => {
     setNameError('');
@@ -105,7 +104,7 @@ const RegistrationPage = () => {
       </div>
       <div className={classes.RegisterFormContainer}>
         <div className={classes.RegisterForm}>
-          <h2>Super App</h2>
+          <h2 className="Logo">Super App</h2>
           <h4>Create your new account</h4>
           <form>
             <Input
