@@ -5,6 +5,12 @@ const Notes = () => {
   const onChangeHandler = (e) => {
     setNotesData(e.target.value);
   };
+  useEffect(() => {
+    const storedNotesData = localStorage.getItem('notesData');
+    if (storedNotesData) {
+      setNotesData(storedNotesData);
+    }
+  }, [notesData]);
 
   useEffect(() => {
     let timer;
@@ -19,7 +25,13 @@ const Notes = () => {
   return (
     <div className={classes.Notes}>
       <h2>All notes</h2>
-      <input type="text" value={notesData} onChange={onChangeHandler}></input>
+      <textarea
+        rows="20"
+        cols="30"
+        type="text"
+        value={notesData}
+        onChange={onChangeHandler}
+      ></textarea>
     </div>
   );
 };

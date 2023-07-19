@@ -1,13 +1,16 @@
 .Notes {
   min-height: 100%;
-
+  width: 90%;
   border-radius: 19px;
   background: #f1c75b;
   padding: 1em;
   color: #000;
 }
-.Notes input {
+.Notes textarea {
+  cursor: pointer;
+  height: 100%;
   border: none;
   background-color: transparent;
   outline: none;
+  overflow: auto;
 }
