@@ -2,6 +2,7 @@
   padding: 0 2em;
   min-height: 100vh;
   background-color: #000;
+  color: #fff;
 }
 .BrowsePage h2 {
   color: #fff;
@@ -22,4 +23,23 @@
   height: 2.5em;
   object-fit: contain;
   border-radius: 100%;
+}
+
+.Caraousel {
+  height: 25vh;
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+}
+.Caraousel::-webkit-scrollbar {
+  display: none;
+}
+.Caraousel img {
+  height: 100%;
+
+  margin-right: 1em;
+}
+.CategoryHeading {
+  opacity: 0.7;
+  margin: 1em 0;
 }

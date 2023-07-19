@@ -32,7 +32,7 @@ const Homepage = () => {
       </div>
       <div className={classes.SubmitButton}>
         {' '}
-        <button onClick={() => navigate('/')}>Browse</button>
+        <button onClick={() => navigate('/browse')}>Browse</button>
       </div>
     </div>
   );
