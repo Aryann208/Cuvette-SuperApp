@@ -36,7 +36,7 @@ const WeatherApp = () => {
           console.error('Request Denied');
         }
       } catch (error) {
-        console.error('Error: ' + error);
+        console.error('Error:' + error);
       }
     };
     fetchData2();
