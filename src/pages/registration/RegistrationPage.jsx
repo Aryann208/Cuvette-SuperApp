@@ -4,51 +4,53 @@ import classes from './RegistrationPage.module.css';
 import Input from '../../components/input/Input';
 import Button from '../../components/button/Button';
 import { useNavigate } from 'react-router-dom';
+
 const RegistrationPage = () => {
   const navigate = useNavigate();
 
   const [name, setName] = useState('');
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
-  const [mobile, setMobile] = useState();
-
+  const [mobile, setMobile] = useState('');
   const [checkbox, setCheckbox] = useState(false);
-  const [nameError, setNameError] = useState('');
-  const [usernameError, setUserameError] = useState('');
-  const [emailError, setEmailError] = useState('');
-  const [mobileError, setMobileError] = useState('');
-  const [checkboxError, setCheckboxError] = useState('');
+
+  const [nameError, setNameError] = useState('Required Field');
+  const [usernameError, setUsernameError] = useState('Required Field');
+  const [emailError, setEmailError] = useState('Required Field');
+  const [mobileError, setMobileError] = useState('Required Field');
+  const [checkboxError, setCheckboxError] = useState('Required Field');
 
   const nameHandler = (e) => {
     setName(e.target.value);
-    // validateName();
+    validateName();
   };
   const usernameHandler = (e) => {
     setUsername(e.target.value);
-    // validateUsername();
+    validateUsername();
   };
   const emailHandler = (e) => {
     setEmail(e.target.value);
-    // validateEmail();
+    validateEmail();
   };
   const mobileHandler = (e) => {
     setMobile(e.target.value);
-    // validateMobile();
+    validateMobile();
   };
   const toggleCheckbox = (e) => {
-    setCheckbox(!checkbox);
+    setCheckbox(e.target.checked);
+    validateCheckbox();
   };
+
   const validateName = () => {
     setNameError('');
-    console.log('name len ' + name?.trim().length);
-    if (name?.trim()?.length < 3) {
-      setNameError("Name can't be empty( min length = 3)");
+    if (name.trim().length < 3) {
+      setNameError("Name can't be empty (min length = 3)");
     }
   };
   const validateUsername = () => {
-    setUserameError('');
-    if (username?.trim()?.length < 3) {
-      setUserameError("Userame can't be empty( min length = 3)");
+    setUsernameError('');
+    if (username.trim().length < 3) {
+      setUsernameError("Username can't be empty (min length = 3)");
     }
   };
   const validateEmail = () => {
@@ -60,7 +62,7 @@ const RegistrationPage = () => {
   };
   const validateMobile = () => {
     setMobileError('');
-    if (mobile?.trim()?.length !== 10) {
+    if (mobile.trim().length !== 10) {
       setMobileError('Mobile Number should be 10 characters');
     }
   };
@@ -78,10 +80,10 @@ const RegistrationPage = () => {
     validateMobile();
     validateCheckbox();
     if (
-      nameError.length === 0 ||
-      emailError.length === 0 ||
-      usernameError.length === 0 ||
-      mobileError.length === 0 ||
+      nameError.length === 0 &&
+      emailError.length === 0 &&
+      usernameError.length === 0 &&
+      mobileError.length === 0 &&
       checkboxError.length === 0
     ) {
       const userData = {
@@ -95,6 +97,7 @@ const RegistrationPage = () => {
       navigate('/select-category');
     }
   };
+
   return (
     <div className={classes.RegisterContainer}>
       <div className={classes.LeftSection}>
