@@ -78,10 +78,10 @@ const RegistrationPage = () => {
     validateMobile();
     validateCheckbox();
     if (
-      nameError.length === 0 &&
-      emailError.length === 0 &&
-      usernameError.length === 0 &&
-      mobileError.length === 0 &&
+      nameError.length === 0 ||
+      emailError.length === 0 ||
+      usernameError.length === 0 ||
+      mobileError.length === 0 ||
       checkboxError.length === 0
     ) {
       const userData = {
@@ -92,7 +92,6 @@ const RegistrationPage = () => {
       };
 
       localStorage.setItem('userData', JSON.stringify(userData));
-
       navigate('/select-category');
     }
   };
