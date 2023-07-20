@@ -6,11 +6,16 @@
   padding: 1em;
   color: #000;
 }
+textarea {
+  resize: none;
+}
 .Notes textarea {
+  width: 90%;
   cursor: pointer;
   height: 100%;
   border: none;
   background-color: transparent;
   outline: none;
   overflow: auto;
+  margin: 1em;
 }

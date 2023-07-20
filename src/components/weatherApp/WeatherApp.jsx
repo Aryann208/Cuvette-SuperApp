@@ -15,7 +15,6 @@ const WeatherApp = () => {
   });
   const WEATHERAPIKEY = process.env.REACT_APP_WEATHERAPIKEY;
   useEffect(() => {
-    console.log(WEATHERAPIKEY);
     const fetchData2 = async () => {
       const url2 = `http://api.weatherapi.com/v1/current.json?key=${WEATHERAPIKEY}&q=Dehradun&aqi=no`;
 

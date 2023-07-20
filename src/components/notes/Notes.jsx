@@ -31,7 +31,7 @@ const Notes = () => {
       <h2>All notes</h2>
       <textarea
         rows="15"
-        cols="30"
+        cols="25"
         type="text"
         value={notesData}
         onChange={onChangeHandler}
